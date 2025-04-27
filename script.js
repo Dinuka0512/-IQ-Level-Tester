@@ -6,12 +6,27 @@ function setrandomnumbers(){
     num1 = Math.floor(Math.random() * 100);
     num2 = Math.floor(Math.random() * 100);
 
-    // console.log(num1)
-    // console.log(num2)
-
     // HERE SET THE RANDOM NUMBERS THAT WHAT GENARATED 
     document.getElementById("num1").innerHTML = num1;
     document.getElementById("num2").innerHTML = num2;
 }
 
 setrandomnumbers();
+
+// HERE NEED TO GET THE ANSWER 
+function getTheAnswer(){
+    //HERE GET THE ANSWER WHAT GIVEN BY USER 
+    let ansSubmit  = parseInt(document.getElementById("answer").value);
+
+    if((num1+num2) === ansSubmit){
+        //ANSWER IS CORRECT 
+        Swal.fire({
+            title: "Yor Answer is Correct!",
+            icon: "success",
+            draggable: true
+          });
+
+        //HERE CLEAR THE TEXT FEALD TEXT
+        document.getElementById("answer").value = "";
+    }
+}
