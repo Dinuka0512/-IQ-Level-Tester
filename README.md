@@ -7,12 +7,6 @@ This app is very useful and highly recommended for kids to improve their basic m
 
 🔗 [Visit the Live Site](https://iq-level-tester.vercel.app/#)
 
-## 📸 Screenshots
-![image](https://github.com/user-attachments/assets/fbd25ed0-1604-4e03-9e91-f283f24a3b67)
-![WhatsApp Image 2025-04-28 at 02 09 57_4d2acde4](https://github.com/user-attachments/assets/25916648-8f09-4f0d-a2fb-1961f6e5206d)
-
-
-
 ## 🧠 Features
 
 - Solve basic math operations (Addition, Subtraction, Multiplication, Division)
@@ -26,6 +20,9 @@ This app is very useful and highly recommended for kids to improve their basic m
 - HTML
 - CSS
 - JavaScript
+
+## 📸 Screenshots
+![image](https://github.com/user-attachments/assets/fbd25ed0-1604-4e03-9e91-f283f24a3b67)
 
 ## 📂 Project Setup
 
