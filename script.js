@@ -28,5 +28,20 @@ function getTheAnswer(){
 
         //HERE CLEAR THE TEXT FEALD TEXT
         document.getElementById("answer").value = "";
+
+        //HERE GET THE ANOTHER NUMBERS AND THIS PROSSESS WILL AGAIN AND AGAIN
+        setrandomnumbers();
+
+    }else{
+        //ANSWER IS WRONG 
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Your Ansewer is wrong! Try It again You can do this!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+
+        //HERE CLEAR THE TEXT FEALD TEXT
+        document.getElementById("answer").value = "";
     }
 }
