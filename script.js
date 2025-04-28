@@ -1,5 +1,6 @@
 let num1;
 let num2;
+let randomOp;
 
 function setrandomnumbers(){
     //HERE GENARATED THE RANDOM NUMBERS 
@@ -9,6 +10,10 @@ function setrandomnumbers(){
     // HERE SET THE RANDOM NUMBERS THAT WHAT GENARATED 
     document.getElementById("num1").innerHTML = num1;
     document.getElementById("num2").innerHTML = num2;
+
+    const symbols = ['/', '*', '+', '-'];
+    randomOp = symbols[Math.floor(Math.random() * symbols.length)];
+    document.getElementById("operation").innerHTML = randomOp;
 }
 
 setrandomnumbers();
