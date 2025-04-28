@@ -48,7 +48,9 @@ function getTheAnswer(){
 
         case "/" : 
         TotalCorrect = num1 / num2;
-        TotalCorrect = TotalCorrect.toFixed(2);
+
+        const factor = Math.pow(10, 2);
+        TotalCorrect = Math.floor(TotalCorrect * factor) / factor;
         break;
     }
     
