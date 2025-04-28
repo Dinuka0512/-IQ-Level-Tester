@@ -4,8 +4,15 @@ let randomOp;
 
 function setrandomnumbers(){
     //HERE GENARATED THE RANDOM NUMBERS 
-    num1 = Math.floor(Math.random() * 100);
-    num2 = Math.floor(Math.random() * 100);
+    num1 = Math.floor(Math.random() * 10) + 1;
+    num2 = Math.floor(Math.random() * 10) + 1;
+
+    if(num1 < num2){
+        // HERE ALLWAYS SET THE BIGGEST NUMBER IN NUM 1 
+        let temp = num1;
+        num1 = num2;
+        num2 = temp;
+    }
 
     // HERE SET THE RANDOM NUMBERS THAT WHAT GENARATED 
     document.getElementById("num1").innerHTML = num1;
@@ -21,9 +28,33 @@ setrandomnumbers();
 // HERE NEED TO GET THE ANSWER 
 function getTheAnswer(){
     //HERE GET THE ANSWER WHAT GIVEN BY USER 
-    let ansSubmit  = parseInt(document.getElementById("answer").value);
+    let ansSubmit  = parseFloat(document.getElementById("answer").value);
+    
 
-    if((num1+num2) === ansSubmit){
+    // // GET THE OPERATOR AND DO THE OPERATION
+    let TotalCorrect;
+    switch(randomOp){
+        case "+" : 
+        TotalCorrect = num1 + num2;
+        break;
+
+        case "-" : 
+        TotalCorrect = num1 - num2;
+        break;
+
+        case "*" : 
+        TotalCorrect = num1 * num2;
+        break;
+
+        case "/" : 
+        TotalCorrect = num1 / num2;
+        TotalCorrect = TotalCorrect.toFixed(2);
+        break;
+    }
+    
+
+    //NOW CHECK THE ANSWER 
+    if(TotalCorrect == ansSubmit){
         //ANSWER IS CORRECT 
         Swal.fire({
             title: "Yor Answer is Correct!",
@@ -41,8 +72,8 @@ function getTheAnswer(){
         //ANSWER IS WRONG 
         Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "Your Ansewer is wrong! Try It again You can do this!",
+            title: "Oops... Your Ansewer is wrong!",
+            text : "THE CORRECT ANSWER : " + TotalCorrect,
             footer: '<a href="#">Why do I have this issue?</a>'
           });
 
