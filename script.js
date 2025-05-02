@@ -1,6 +1,26 @@
 let num1;
 let num2;
 let randomOp;
+let points = 0;
+
+if(localStorage.getItem("name") == null){
+    document.getElementById("userDetails").style.display = "block";
+    document.getElementById("container").style.display = "none";
+}else{
+    document.getElementById("name").innerHTML = localStorage.getItem("name");
+}
+
+if(localStorage.getItem("points")==null){
+    document.getElementById("coins").innerHTML = 0;
+}else{
+    document.getElementById("coins").innerHTML = localStorage.getItem("points");
+}
+
+// HERE SAVE THE USER NAME
+function save(){
+    let name = document.getElementById("txtName").value;
+    localStorage.setItem("name",name);
+}
 
 function setrandomnumbers(){
     //HERE GENARATED THE RANDOM NUMBERS 
@@ -66,6 +86,13 @@ function getTheAnswer(){
 
         //HERE CLEAR THE TEXT FEALD TEXT
         document.getElementById("answer").value = "";
+        
+        // HERE SET THE POINTS
+        points = parseInt(document.getElementById("coins").innerHTML)
+        // console.log(points)
+        points += 10;
+        localStorage.setItem("points",points);
+        document.getElementById("coins").innerHTML = points;
 
         //HERE GET THE ANOTHER NUMBERS AND THIS PROSSESS WILL AGAIN AND AGAIN
         setrandomnumbers();
@@ -81,5 +108,11 @@ function getTheAnswer(){
 
         //HERE CLEAR THE TEXT FEALD TEXT
         document.getElementById("answer").value = "";
+
+        points = parseInt(document.getElementById("coins").innerHTML);
+        points -= 5;
+        localStorage.setItem("points",points);
+        document.getElementById("coins").innerHTML = points;
+
     }
 }
