@@ -113,7 +113,7 @@ p{
     color: gray;
 }
 
-#name, #coins{
+#name, #coins, #level{
     color: white;
     font-size: 20px;
 }
@@ -153,4 +153,10 @@ input{
     #userDetails{
         width: 90%;
     }
+}
+
+.pointCon{
+    width: 200px;
+    height: 60px;
+    display: flex;
 }

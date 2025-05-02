@@ -3,6 +3,10 @@ let num2;
 let randomOp;
 let points = 0;
 
+let levelPointsArray = [100, 300, 500, 700, 800, 1000];
+let hardnessArray = [10, 25, 75, 100, 250, 500];
+
+
 if(localStorage.getItem("name") == null){
     document.getElementById("userDetails").style.display = "block";
     document.getElementById("container").style.display = "none";
@@ -23,9 +27,29 @@ function save(){
 }
 
 function setrandomnumbers(){
-    //HERE GENARATED THE RANDOM NUMBERS 
-    num1 = Math.floor(Math.random() * 10) + 1;
-    num2 = Math.floor(Math.random() * 10) + 1;
+    let currentPoints =  document.getElementById("coins").innerHTML;
+    
+    if(levelPointsArray[0] >= currentPoints){
+        console.log(hardnessArray[0]);
+        //HERE GENARATED THE RANDOM NUMBERS 
+        num1 = Math.floor(Math.random() * hardnessArray[0]) + 1;
+        num2 = Math.floor(Math.random() * hardnessArray[0]) + 1;
+
+        // setlevel
+        document.getElementById("level").innerHTML = 1;
+    }
+
+
+    for(let i = 1; i < levelPointsArray.length; i++){
+        if(levelPointsArray[i] >= currentPoints && levelPointsArray[i-1] <= currentPoints){
+            //HERE GENARATED THE RANDOM NUMBERS 
+            num1 = Math.floor(Math.random() * hardnessArray[i]) + 1;
+            num2 = Math.floor(Math.random() * hardnessArray[i]) + 1;
+
+            // setlevel
+            document.getElementById("level").innerHTML = i+1;
+        }
+    }
 
     if(num1 < num2){
         // HERE ALLWAYS SET THE BIGGEST NUMBER IN NUM 1 
